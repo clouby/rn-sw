@@ -5,7 +5,7 @@ import CharacterCard from './CharacterCard'
 
 interface Props {
   characters: Character[]
-  columns: number
+  columns?: number
 }
 
 export default function CharacterList(props: Props) {
