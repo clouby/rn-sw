@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native'
 import Icon from '@expo/vector-icons/MaterialCommunityIcons'
 
-import { Character } from './../../interface'
+import { Character } from '../../interface'
 import { getWords } from '../../utils/words'
 
 export default function Header(props: Character) {
@@ -20,7 +20,7 @@ export default function Header(props: Character) {
           <Image
             source={{ uri: image }}
             style={[styles.image, loading]}
-            resizeMode="contain"
+            resizeMode="cover"
             onLoadEnd={() => void setImageLoading(false)}
           />
         </View>
