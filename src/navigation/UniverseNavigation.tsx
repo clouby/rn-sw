@@ -1,13 +1,14 @@
 import React from 'react'
-import { Text } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import Universe from '../screens/Universe'
 import Character from '../screens/Character'
 import FavIcon from '../components/FavIcon'
+import useAuth from '../hooks/useAuth'
 
 const Stack = createStackNavigator()
 
 export default function UniverseNavigation() {
+  const [{ isAuth }] = useAuth()
   return (
     <Stack.Navigator>
       <Stack.Screen name="Universe" component={Universe} />
@@ -15,7 +16,7 @@ export default function UniverseNavigation() {
         name="Character"
         component={Character}
         options={{
-          headerRight: FavIcon,
+          headerRight: () => (isAuth ? <FavIcon /> : null),
         }}
       />
     </Stack.Navigator>

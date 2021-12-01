@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, SectionList, SafeAreaView } from 'react-native'
+import { View, Text, StyleSheet, SectionList } from 'react-native'
 
 export default function Description(props: any) {
   const { character, header } = props
